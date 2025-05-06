@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="jakarta.servlet.http.HttpSession"%>
 <%@ page import="jakarta.servlet.http.HttpServletRequest"%>
+
 <%
 // Initialize necessary objects and variables
 HttpSession userSession = request.getSession(false);
@@ -108,7 +109,6 @@ href="${pageContext.request.contextPath}/css/header.css" />
         <div class="dropdown">
   <img src="${contextPath}/resources/images/system/myacc.png" alt="My Account icon">
   <div class="dropdown-content">
-  
     <c:choose>
       <c:when test="${not empty sessionScope.username}">
         <span class="welcome-text">Welcome, ${sessionScope.username}!</span>
@@ -117,15 +117,14 @@ href="${pageContext.request.contextPath}/css/header.css" />
           <input type="submit" class="nav-button" value="Logout" />
         </form>
       </c:when>
-      
       <c:otherwise>
         <a href="${contextPath}/login">Login</a>
         <a href="${contextPath}/register">Register</a>
       </c:otherwise>
     </c:choose>
-    
   </div>
 </div>
+
 
         <div class="cart-icon">
           <a href="${contextPath}/mycart"><img src="${contextPath}/resources/images/system/mycart.png"></a>
